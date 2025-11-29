@@ -1,0 +1,142 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>To My Hardworking Handsome Angel Boy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background: #fff4f6;
+        font-family: 'Dancing Script', cursive;
+        text-align: center;
+        padding: 40px;
+        color: #4a2c2c;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 3rem;
+        color: #d14f62;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease forwards;
+    }
+
+    .button {
+        padding: 12px 26px;
+        background: #d14f62;
+        color: white;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1.5rem;
+        border: none;
+        margin-top: 20px;
+        transition: 0.3s;
+        font-family: 'Dancing Script', cursive;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .button:hover {
+        transform: scale(1.07);
+        background: #b53e51;
+    }
+
+    .letter, .photo-section {
+        display: none;
+        margin-top: 30px;
+        font-size: 1.8rem;
+        line-height: 1.6;
+        white-space: pre-line;
+        animation: fadeUp 1.5s ease forwards;
+    }
+
+    img {
+        width: 90%;
+        max-width: 400px;
+        border-radius: 16px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+        animation: fadeIn 2s ease forwards;
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -10px;
+        color: #ff7aa2;
+        font-size: 22px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.8;
+        z-index: 1000;
+        pointer-events: none;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(0) translateX(0); opacity: 1; }
+        100% { transform: translateY(-120vh) translateX(30px); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>to my hardworking handsome angel boy</h1>
+
+<button class="button" onclick="showLetter()">💌 Click to open your letter</button>
+
+<audio id="song" src="assets/song.mp3"></audio>
+
+<div id="letter" class="letter">
+hi jaan! You are absolutely doing your best at this point. I only pray and hope all our dreams come true and we get to go study the big things we’ve always dreamt of. Oh! What a joy it is to share this life with someone who is so madly passionate about creating a change in the world and to dare dream about leaving behind legacies.
+
+I’m grateful I have a man who strives to live a life full of purpose and meaning. I’m so proud of all the effort you’re putting into realising your dreams. No matter the result I’m going to be with you through it all. Having said that I’m sure we are going to fly soon !!
+
+I love you my kanda ❤️
+
+<br><br>
+<button class="button" onclick="showPhoto()">📸 Click to see us</button>
+</div>
+
+<div id="photo" class="photo-section">
+    <img src="assets/photo.jpg" alt="Our Photo">
+</div>
+
+<script>
+function showLetter() {
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("song").play();
+}
+
+function showPhoto() {
+    document.getElementById("photo").style.display = "block";
+    document.getElementById("song").play();
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 8000);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
